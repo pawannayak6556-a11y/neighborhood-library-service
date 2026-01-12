@@ -1,2 +1,7 @@
-# neighborhood-library-service
-gRPC-based library management system using Python, PostgreSQL, Node.js, and React
+# Neighborhood Library Service
+
+A full-stack library management system using:
+- Python gRPC
+- PostgreSQL
+- Node.js API Gateway
+- React frontend
