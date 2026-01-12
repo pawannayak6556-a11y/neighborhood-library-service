@@ -1,1 +1,38 @@
+syntax = "proto3";
 
+package library;
+
+service LibraryService {
+  rpc CreateBook(CreateBookRequest) returns (Book);
+  rpc ListBooks(Empty) returns (BookList);
+  rpc BorrowBook(BorrowBookRequest) returns (Loan);
+}
+
+message Empty {}
+
+message Book {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  int32 available_copies = 4;
+}
+
+message Loan {
+  int32 book_id = 1;
+  int32 member_id = 2;
+}
+
+message CreateBookRequest {
+  string title = 1;
+  string author = 2;
+  int32 copies = 3;
+}
+
+message BorrowBookRequest {
+  int32 book_id = 1;
+  int32 member_id = 2;
+}
+
+message BookList {
+  repeated Book books = 1;
+}
